@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Choose Type of Appointment Appointment</title>
+		<link rel = "stylesheet" href = "css/appointmentchoice.css" />
+		</head>
+	<body>
+		<div id = "appointment1">
+			<header>
+				<img src = "img/logo.jpg" alt = "Logo" />
+				<h1>BEST VISION HOSPITAL</h1>
+				<h2>A One-Stop Solution To Keep You Healthy</h2>
+			</header>
+		</div>
+		<div id = "appointment2">
+		<br />
+			<form action = "appointmentchoiceprocessing.php" method = "post">
+				<h2>Which type of appointment do you want?</h2>
+				<input type = "radio" class = "radiob" id = "patient" name = "appchoice" value = "1">Get admitted as patient.</input><br />
+				<input type = "radio" class = "radiob" id = "quickappointment" name = "appchoice" value = "2" checked = "checked" >Get a consultational appointment with a doctor for today. (Timings: 10:00 am - 1:00 pm)</input><br /><br ><br />
+				<input type = "submit" name = "submit" value= "Next" />
+			</form>
+		</div>
+		<div id = "appointment3">
+			<footer>
+				<ul>
+					<li>Contact number: 080-23450917, 080-23450918, 080-23450919, 080-23334565</li>
+					<li>&copy; BEST VISION Foundation for Medical Education and Research. All rights reserved.</li>
+				</ul>
+			</footer>
+		</div>
+	</body>
+</html>

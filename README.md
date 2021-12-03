@@ -1,1 +1,1 @@
-# new-hosp
+# spades-hosp

@@ -1,0 +1,81 @@
+#patient1 header{
+	padding: 12px;
+	color: white;
+	background-color: #026381;
+	text-align: center;
+	position: relative;
+	top: 0;
+	border: solid #000000;
+}
+
+#patient1 header img{
+	padding: 12px;
+	position: relative;
+	top: 0;
+	width: 100px;
+    	height: 100px;
+   	border-radius: 50%;
+   	overflow: hidden;
+	float: left;
+}
+
+#patient2{
+	background-color: rgb(212, 241, 250);
+	padding-left: 8%;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+
+#patient2 form h2{
+	text-decoration: underline;
+	font-size: 30px;
+}
+
+#patient2 form label{
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding-right: 15px;
+}
+
+#patient2 form input[type=text] {
+    	width: 70%;
+   	padding: 12px; 
+    	border: 1px solid #ccc;
+    	border-radius: 4px;
+   	margin-top: 6px;
+    	margin-bottom: 16px;
+}
+
+.insurance, .patient_type{
+	margin-left: 2%;
+}
+
+#patient2 form input[type=submit]{
+	background-color: #026381;
+    	color: #fff;
+    	padding: 12px 20px;
+    	border: none;
+    	border-radius: 4px;
+    	cursor: pointer;
+	margin-left: 41%;
+}
+
+#patient2 form input[type=submit]:hover{
+ 	background: white;
+	color: #021C1E;
+}
+
+#patient3{
+	color: white;
+	background-color: #026381;
+	text-align: center;
+	position: relative;
+	border: solid #000000;
+}
+
+#patient3 footer ul{
+	list-style-type: none;
+}

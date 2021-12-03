@@ -1,0 +1,142 @@
+<html>
+	<head>
+		<title>Make An Appointment</title>
+		<link rel = "stylesheet" href = "css/appointment.css" />
+		<script language="Javascript" type="text/javascript">
+			function onlyAlphabets(e, t) {
+           		 	try {
+               				if (document.event) {
+               			 	    var charCode = document.event.keyCode;
+               				 }
+               				 else if (e) {
+                   					 var charCode = e.which;
+                				}
+               					 else { return true; }
+                			if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                   				 return true;
+                			else
+                   				 return false;
+            				}
+            			catch (err) {
+                		alert(err.Description);
+            			}
+        		}
+        		function onlyNumbers(e, t) {
+           		 	try {
+               				if (document.event) {
+               				     var charCode = document.event.keyCode;
+               				 }
+               			 	else if (e) {
+                   					 var charCode = e.which;
+                				}
+               				 	else { return true; }
+                			if ((charCode > 47 && charCode < 58) || (charCode == 45))
+                   				 return true;
+                			else
+                   				 return false;
+            				}
+            			catch (err) {
+                		alert(err.Description);
+            			}
+        		}
+        		function onlyAlphanumeric(e, t) {
+           		 	try {
+               				if (document.event) {
+               				     var charCode = document.event.keyCode;
+               				 }
+               			 	else if (e) {
+                   					 var charCode = e.which;
+                				}
+               				 	else { return true; }
+                			if ((charCode > 47 && charCode < 58) || (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode == 32) || (charCode == 44) || (charCode == 46))
+                   				 return true;
+                			else
+                   				 return false;
+            				}
+            			catch (err) {
+                		alert(err.Description);
+            			}
+        		}
+        		function setInsurance_num(){
+   							var el = document.getElementById("insurance1");
+    							if(el.checked)
+      								document.getElementById("insurance_num").disabled = false;
+   							else
+    								 document.getElementById("insurance_num").disabled = true;
+    							var el = document.getElementById("insurance2");
+    							if(el.checked)
+      								document.getElementById("insurance_num").disabled = true;
+   							else
+    								 document.getElementById("insurance_num").disabled = false;
+    			}
+		</script>
+	</head>
+	<body>
+		<div id = "appointment1">
+			<header>
+				<img src = "img/logo.jpg" alt = "Logo" />
+				<h1>BEST VISION HOSPITAL</h1>
+				<h2>A One-Stop Solution To Keep You Healthy</h2>
+			</header>
+		</div>
+		<div id = "appointment2">
+			<br />
+			<form action = "appointmentprocessing.php" method = "post">
+				<h2>Patient Information:</h2>
+				<label for = "fname">Legal First Name:</label>
+    				<input type = "text" id = "fname" name = "firstname" placeholder = "Your name...(Mandatory)" maxlength = "50" pattern = "/^[A-Za-z\s]*${,50}" required autocomplete = "off" onkeypress = "return onlyAlphabets(event,this);" />
+   				<label for = "lname">Legal Last Name:</label>
+   				<input type = "text" id = "lname" name = "lastname" placeholder = "Your last name...(Mandatory)" maxlength = "50" pattern = "[A-Za-z\s]*{,50}" required autocomplete = "off" onkeypress = "return onlyAlphabets(event,this);" />
+				<label for = "addr">Address:</label>
+    				<input type = "text" id = "addr" name = "address" placeholder = "Your address...(Mandatory)" maxlength = "150" pattern = "[A-Za-z0-9\s]{,150}" required autocomplete = "off" onkeypress = "return onlyAlphanumeric(event,this);"/>
+   				<label for = "city">City:</label>
+   				<input type = "text" id = "city" name = "city" placeholder = "Your city...(Mandatory)" maxlength = "50" pattern = "[A-Za-z\s]{,50}" required autocomplete = "off" onkeypress = "return onlyAlphabets(event,this);"/>
+				
+     					
+  				</select>
+				<label for = "pincode">PIN:</label>
+   				<input type = "text" id = "pincode" name = "pincode" placeholder = "Your pincode...(Mandatory)" maxlength = "6" pattern = "[0-9]{6}" required autocomplete = "off" onkeypress = "return onlyNumbers(event,this);" />
+				<label for = "primaryphone">Mobile Number:</label>
+   					<input type = "text" id = "primaryphone" name = "primaryphone" placeholder = "Your number...(Mandatory)" maxlength = "10" pattern = "[0-9]{10}" required autocomplete = "off" onkeypress = "return onlyNumbers(event,this);" /><br />
+				<br />
+				<label for = "email">E-mail ID:</label>
+   				<input type = "email" id = "email" name = "email" placeholder = "Your e-mail address..." maxlength = "60" autocomplete = "off" />
+   				<br />
+				<label>Gender:</label>
+					<input type = "radio" class = "gender" name = "gender" value = "Male" checked = "checked">Male</input>
+					<input type = "radio" class = "gender" name = "gender" value = "Female">Female</input>
+					<input type = "radio" class = "gender" name = "gender" value = "Other">Other</input><br />
+				<br />
+				<label>Birth Date:</label>
+				Date <input type="date"></input>
+					
+				<br />
+				<label>Does the patient have insurance?</label>
+					<input type = "radio" id = "insurance1" class = "insurance" name = "insurance" value = "Yes" onClick = "setInsurance_num();" checked = "checked">Yes</input>
+					<input type = "radio" id = "insurance2" class = "insurance" name = "insurance" value = "No"  onClick = "setInsurance_num();">No</input>
+				<br /><br />
+				<label for = "insurance_num">Insurance Number:</label>
+    				<input type = "text" id = "insurance_num" name = "insurance_num" maxlength = "5" pattern = "[0-9]{5}" autocomplete = "off" onkeypress = "return onlyNumbers(event,this);" />
+    				<br />
+    				<label>Patient type:</label>
+					<input type = "radio" id = "patient_type1" class = "patient_type" name = "patient_type" value = "Inpatient" onClick = "changeFields();" checked = "checked">Inpatient</input>
+					<input type = "radio" id = "patient_type2" class = "patient_type" name = "patient_type" value = "Outpatient" onClick = "changeFields();">Outpatient</input>
+				<br />
+				<h2>Medical Concerns:</h2>
+				<label for id = "medicalconcern">What is the primary medical problem or diagnosis for the appointment request?</label>
+				<input type = "textarea" rows = "4" id = "medicalconcern" name = "medicalconcern" maxlength = "150" pattern = "[a-Za-z0-9]{,150)" autocomplete = "off" onkeypress = "return onlyAlphanumeric(event,this);"/>
+				<br />
+				<p>IMPORTANT: After submission, please do not leave this form until you see the confirmation message.</p>
+				<input type = "submit" name = "submit" value= "Send Request" />
+			</form>
+		</div>
+		<div id = "appointment3">
+			<footer>
+				<ul>
+					<li>Contact number: 080-23450917, 080-23450918, 080-23450919, 080-23334565</li>
+					<li>&copy; BEST VISION Foundation for Medical Education and Research. All rights reserved.</li>
+				</ul>
+			</footer>
+		</div>
+	</body>
+</html>

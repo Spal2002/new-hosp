@@ -1,0 +1,85 @@
+body {
+	border: solid 10px #3898a8;
+}
+
+#home1 header img{
+	height: 100px;
+	width: 100px;
+	position:absolute;
+	right:70%;
+}
+
+#home1 header{
+	color: #6e93e2;
+	background-color:rgb(227, 247, 253);
+	text-align: center;
+	width: 100%;
+	height: 25%;
+	 padding:20px 0px; 
+
+}
+
+
+.home2{
+	
+	background-color:rgb(212, 241, 250) ;
+	width: 100%;
+	height:95%;
+	padding:10px 0px;
+	
+}
+
+.home2 button{
+	border-radius: 12px;
+	background-color:#6e93e2;
+	color:rgb(212, 241, 250);
+	width: 30%;
+	position:relative;
+	top:5%;
+	right:-60%;
+	margin:3px;
+	border: solid 5px #3898a8;
+	padding:15px;
+	font-size: 20px;
+	
+}
+
+.home2 button:hover{
+	background:black;
+	color: rgb(212, 241, 250);
+}
+
+#doctorinfo {
+	height:60%;
+	width:40%;
+	position:relative;
+	left:10%;
+	top:-70%;
+	border: solid 10px #3898a8;
+}
+
+
+
+#textlink {
+	position: absolute;
+    	top:49%;
+		margin:10px;
+    	right: 16%;
+    	color:#6e93e2;
+}
+	
+#home3{
+	width:80%;
+	color: rgba(20, 59, 187, 0.671);
+	background-color:rgb(227, 247, 253);
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border:solid 2px #3898a8; 
+}
+
+#home3 footer ul{
+	list-style-type: none;
+}

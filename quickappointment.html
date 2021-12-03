@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>Make An Appointment</title>
+		<link rel = "stylesheet" href = "css/quickappointment.css" />
+		<script language="Javascript" type="text/javascript">
+			function onlyAlphabets(e, t) {
+           		 	try {
+               				if (document.event) {
+               			 	    var charCode = document.event.keyCode;
+               				 }
+               				 else if (e) {
+                   					 var charCode = e.which;
+                				}
+               					 else { return true; }
+                			if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                   				 return true;
+                			else
+                   				 return false;
+            				}
+            			catch (err) {
+                		alert(err.Description);
+            			}
+        		}
+			function onlyNumbers(e, t) {
+           		 	try {
+               				if (document.event) {
+               				     var charCode = document.event.keyCode;
+               				 }
+               			 	else if (e) {
+                   					 var charCode = e.which;
+                				}
+               				 	else { return true; }
+                			if ((charCode > 47 && charCode < 58))
+                   				 return true;
+                			else
+                   				 return false;
+            				}
+            			catch (err) {
+                		alert(err.Description);
+            			}
+        		}
+		</script>
+	</head>
+	<body>
+		<div id = "appointment1">
+			<header>
+				<img src = "img/logo.jpg" alt = "Logo" />
+				<h1>BEST VISION HOSPITAL</h1>
+				<h2>A One-Stop Solution To Keep You Healthy</h2>
+			</header>
+		</div>
+		<div id = "appointment2">
+			<br />
+			<form action = "quickappointmentprocessing.php" method = "post">
+				<h2>Patient Information:</h2>
+				<label for = "fname">Legal First Name:</label>
+    				<input type = "text" id = "fname" name = "firstname" placeholder = "Your name...(Mandatory)" maxlength = "50" pattern = "[A-Za-z]{1,50}" required autocomplete = "off" onkeypress = "return onlyAlphabets(event,this);" />
+   				<label for = "lname">Legal Last Name:</label>
+   				<input type = "text" id = "lname" name = "lastname" placeholder = "Your last name...(Mandatory)" maxlength = "50" pattern = "[A-Za-z]{1,50}" required autocomplete = "off" onkeypress = "return onlyAlphabets(event,this);" />
+   				<label for = "contact">Mobile Number:</label>
+    				<input type = "text" id = "contact" name = "contact" placeholder = "Your mobile number...(Mandatory)" maxlength = "10" pattern = "[0-9]{10}" required autocomplete = "off" onkeypress = "return onlyNumbers(event,this);" />
+   				<label for = "doctorid">Employee ID of the doctor whose appointment you need:</label>
+   				<input type = "text" id = "doctorid" name = "doctorid" maxlength = "5" pattern = "[0-9]{1,5}" placeholder = "Employee ID...(Mandatory)" required autocomplete = "off" onkeypress = "return onlyNumbers(event,this);" />
+   				<input type = "submit" name = "submit" value= "Send Request" />
+			</form>
+		</div>
+		<div id = "appointment3">
+			<footer>
+				<ul>
+					<li>Contact number: 080-23450917, 080-23450918, 080-23450919, 080-23334565</li>
+					<li>&copy; BEST VISION Foundation for Medical Education and Research. All rights reserved.</li>
+				</ul>
+			</footer>
+		</div>
+	</body>
+</html>
